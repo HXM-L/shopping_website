@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterBusiness.master.cs" Inherits="MasterBusiness" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>易购超市后台</title>
+    <link rel="shortcut icon" href="/images/主页.png" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        .linkbutton {
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: forestgreen;
+            }
+
+            a:active {
+                color: red;
+            }
+
+        .linkbutton:hover{
+             color: forestgreen;
+        }
+        .linkbutton:active{
+            color: red;
+        }
+        .mainbody {
+            width: 101%;
+            height: 720px;
+            border-width: 2px;
+            border-color: #000000;
+            font-size: 26px;
+            background-image: url('/images/背景.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin-top: -8px;
+            margin-left: -8px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            background-size: 80% 85%;
+        }
+
+
+        .auto-style1 {
+            width: 576px;
+        }
+        /*        treeview控件的样式*/
+        .auto-style2 {
+            width: 130px;
+            height: 625px;
+            position: relative;
+            left: 8px;
+            /*            padding-top:-20px;*/
+        }
+        /*        logo 样式*/
+        .auto-style3 {
+            width: 150px;
+            height: 84px;
+        }
+
+        .auto-style4 {
+            width: 1100px;
+            height: 84px;
+        }
+
+        .auto-style5 {
+            width: 130px;
+            height: 84px;
+        }
+
+        treeview {
+            margin-top: -10px;
+            margin-bottom: 150px;
+        }
+
+        .selectNode {
+            width: 50px;
+            height: 35px;
+            /*           background-color:chartreuse;*/
+            position: relative;
+            left: -31px;
+            margin-right: -50px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="mainbody">
+
+            <table style="width: 100%;">
+                <tr>
+                    <td class="auto-style3">
+                        <asp:ImageButton ID="ImageButton1" runat="server" Height="70px" ImageUrl="~/images/logo.png" Width="65px" Style="margin-left: 38px; margin-top: 2px" />
+                    </td>
+                    <td class="auto-style4">易购超市后台</td>
+                    <td class="auto-style5" style="width: 210px;">
+                        <asp:Label ID="Label1" runat="server" Text="欢迎商家Mike!"></asp:Label>
+                    </td>
+                    <td class="auto-style5">
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" ForeColor="Black" PostBackUrl="~/Home.aspx" CssClass="linkbutton">店铺首页</asp:LinkButton>
+                    </td>
+                    <td class="auto-style5">
+                        <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Black" OnClick="LinkButton2_Click" PostBackUrl="~/login.aspx" CssClass="linkbutton">退出登录</asp:LinkButton>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">
+                        <div class="treeview" style="position: relative; top: -187px">
+                            <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" BorderStyle="None" Font-Size="Large" ForeColor="Black" ParentNodeStyle-Height="0px" Height="250px" Width="100px" ShowLines="True">
+                                <HoverNodeStyle BackColor="transparent" />
+                                <LeafNodeStyle VerticalPadding="10px" />
+                                <NodeStyle HorizontalPadding="2px" />
+                                <ParentNodeStyle Height="20px" Width="0px"></ParentNodeStyle>
+                                <SelectedNodeStyle BackColor="White" HorizontalPadding="62px" VerticalPadding="0px" CssClass="selectNode" Width="0px" />
+                            </asp:TreeView>
+                            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+                        </div>
+                    </td>
+                    <td class="auto-style1" colspan="4">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

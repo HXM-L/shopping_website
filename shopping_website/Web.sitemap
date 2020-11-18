@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap>
+	<siteMapNode url="" title=""  description="">
+		<siteMapNode url="~/BusinessHome.aspx" title="商家首页"  description="BusinessHome" />
+		<siteMapNode url="~/OrderManage.aspx" title="订单管理"  description="OrderManage" />
+		<siteMapNode url="~/WaresManage.aspx" title="商品管理"  description="WaresManage" />
+		<siteMapNode url="~/PurchaseManage.aspx" title="进货管理"  description="PurchaseManage" />
+		<siteMapNode url="~/StockManage.aspx" title="库存管理"  description="StockManage" />
+		<!--<siteMapNode url="~/SaleManage.aspx" title="销售管理"  description="SaleManage" />-->
+		<siteMapNode url="~/AchievementManage.aspx" title="业绩管理"  description="AchievementManage" />
+		<siteMapNode url="~/ModifyInformation.aspx" title="修改信息"  description="ModifyInformation" />
+	</siteMapNode>
+</siteMap>

@@ -1,0 +1,257 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UserHome.master.cs" Inherits="Muser" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 99%;
+            height: 99%;
+            min-width: 800px;
+            background-image: url(images/7.png);
+            background-size: 100%;
+            z-index: -1;
+        }
+        /* 头栏的样式*/
+        .head_column {
+            background-color: #efe4dd;
+            z-index: 1;
+        }
+
+        .auto-style1 {
+            position: relative;
+            width: 103%;
+            height: 100%;
+            margin: -9px;
+            left: 3px;
+            padding-top: 5px;
+            border-collapse: collapse;
+            z-index: 1;
+            /*background-color:aqua;*/
+        }
+
+        .auto-style2 {
+            width: 80%;
+            height: 30px;
+            border: 1px solid #F1E9E2;
+            border-collapse: collapse; /*消除table的内边距*/
+        }
+
+        .auto-style3 {
+            position: relative;
+            width: 20%;
+            height: 30px;
+            border: 1px solid #F1E9E2;
+            border-collapse: collapse;
+        }
+
+        /*logo的样式*/
+        .logo {
+            position: relative;
+            width: 85px;
+            height: 85px;
+            left: 30%;
+            background-image: url(images/logo.png);
+            background-repeat: no-repeat;
+            background-size: 85% 80%;
+        }
+
+        .auto-style6 {
+            width: 0%;
+        }
+
+        .auto-style6 {
+            width: 7%;
+        }
+        /* 搜索输入框的样式*/
+        .auto-style9 {
+            position: relative;
+            width: 40%;
+            height: 42px;
+            top: -20px;
+            left: -212px;
+            background-color: transparent;
+            border: 2px solid red;
+            outline: none; /*去除输入框默认点击时出现的边框*/
+        }
+
+        .auto-style10 {
+            width: 125%;
+        }
+
+        .menustyle {
+            position: relative;
+            height: 10px;
+            top: -20px;
+            left: 0px;
+            display: block;
+            background-color: transparent;
+        }
+
+        .menuchose {
+            position: relative;
+            margin: -20px auto;
+            left: 10px;
+            background-color: transparent;
+            font-family: KaiTi;
+            font-size: larger;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .mainbody {
+            position: relative;
+            width: 1190px;
+            height: 600px;
+            margin: auto;
+            top: -45px;
+            left: 5px;
+            background-color: transparent;
+            border: 2px solid transparent;
+        }
+        /*头像外框的样式*/
+        .head_portrait {
+            position: relative;
+            width: 270px;
+            height: 85px;
+            background-color: transparent;
+        }
+
+        .Navbar {
+            position: relative;
+            float: left;
+            width: 165px;
+            height: 520px;
+            background-color: transparent;
+            border: 2px solid black;
+        }
+
+        .RightColumn {
+            position: relative;
+            float: right;
+            width: 1015px;
+            height: 520px;
+            background-color: transparent;
+            border: 2px solid black;
+        }
+        /*头像框*/
+        .headImage {
+            position: relative;
+            height: 90px;
+            width: 90px;
+            margin: auto;
+            top: -10px;
+            left: 38px;
+            border-radius: 50%;
+            border: 1px solid orange;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /*欢迎语*/
+        .txtwellcome {
+            position: relative;
+            float: right;
+            top: 22px;
+            font-family: KaiTi;
+            font-size: 30px;
+            font-weight: 500;
+        }
+        /*左侧导航栏*/
+        .treeMenu {
+            position: relative;
+            margin: auto;
+            font-family: KaiTi;
+            font-size: 30px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body style="width: 97%">
+    <form id="form1" runat="server">
+        <div>
+            <table class="auto-style1">
+                <tr class="head_column">
+                    <td class="auto-style2"></td>
+                    <td class="auto-style3">
+                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" ForeColor="#999999" CssClass="menustyle" RenderingMode="Table" Height="10px" Font-Size="Medium" StaticEnableDefaultPopOutImage="False">
+                            <DynamicMenuItemStyle Font-Size="Small" CssClass=" " />
+                            <DynamicMenuStyle CssClass=" " />
+                            <Items>
+                                <asp:MenuItem Text="个人中心" Value="个人中心">
+                                    <asp:MenuItem Text="商城首页" Value="商城首页" NavigateUrl="Home.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="退出登录" Value="退出登录" NavigateUrl="login.aspx"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="购物车" Value="购物车">
+                                    <asp:MenuItem Text="查看购物车" Value="查看购物车" NavigateUrl="ShoppingCart.aspx"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="收藏夹" Value="收藏夹">
+                                    <asp:MenuItem Text="查看收藏夹" Value="查看收藏夹" NavigateUrl="UserFavorite.aspx"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="联系客服" Value="联系客服">
+                                    <asp:MenuItem Text="联系客服" Value="联系客服"></asp:MenuItem>
+                                </asp:MenuItem>
+                            </Items>
+                            <StaticMenuItemStyle ItemSpacing="100px" HorizontalPadding="5px" Font-Size="Medium" />
+                            <StaticMenuStyle HorizontalPadding="0px" Width="100px" Height="0px" VerticalPadding="2px" />
+                        </asp:Menu>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <table class="auto-style10">
+                            <tr style="width: 100%; height: 70px">
+                                <td class="auto-style6">
+                                    <div class="logo">
+                                    </div>
+                                </td>
+                                <td>
+                                    <%--<input id="Submit1" class="auto-style9" type="text" placeholder="请输入" />
+                                    <asp:ImageButton CssClass="camera" ID="ImageButton1" runat="server" Height="25px" ImageUrl="~/images/相机.png" Width="28px" />
+                                    <asp:ImageButton class="search" ID="ImageButton2" runat="server" ImageUrl="~/images/搜索.png" />--%>
+                                </td>
+                            </tr>
+                        </table>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="mainbody">
+            <div class="head_portrait">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/头像.png" CssClass="headImage" />
+                <asp:Label ID="Label1" runat="server" Text="Hi,Mike!" CssClass="txtwellcome"></asp:Label>
+            </div>
+            <div class="Navbar">
+                <asp:TreeView ID="TreeView1" runat="server" ShowLines="True" CssClass="treeMenu">
+                    <Nodes>
+                        <asp:TreeNode Text="个人信息" Value="个人信息" NavigateUrl="Pinformation.aspx"></asp:TreeNode>
+                        <asp:TreeNode Text="我的订单" Value="我的订单" NavigateUrl="UserOrder.aspx"></asp:TreeNode>
+                        <asp:TreeNode Text="购物车" Value="购物车" NavigateUrl="ShoppingCart.aspx"></asp:TreeNode>
+                        <asp:TreeNode Text="收藏夹" Value="收藏夹" NavigateUrl="UserFavorite.aspx"></asp:TreeNode>
+                        <asp:TreeNode Text="评价晒单" Value="评价晒单" NavigateUrl="UserEvaluate.aspx"></asp:TreeNode>
+                        <asp:TreeNode Text="退款维权" Value="退款维权" NavigateUrl="UserRefund.aspx"></asp:TreeNode>
+                        <asp:TreeNode Text="账号安全" Value="账号安全" NavigateUrl="Account Security.aspx"></asp:TreeNode>
+                    </Nodes>
+                    <NodeStyle VerticalPadding="5px" />
+                    <ParentNodeStyle VerticalPadding="10px" />
+                    <RootNodeStyle VerticalPadding="10px" />
+                </asp:TreeView>
+            </div>
+            <div class="RightColumn">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <%--注意,这个控件一定要放在<formview></formview>内--%>
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
